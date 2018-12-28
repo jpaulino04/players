@@ -1,5 +1,5 @@
 {
-  "name": "starterpack",
+  "name": "website",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -8,7 +8,7 @@
     "client": "npm run start --prefix client",
     "server": "nodemon server/server.js",
     "dev": "concurrently \"npm run client\" \"npm run server\""
-  },  
+  },
   "author": "jp",
   "license": "MIT",
   "dependencies": {
