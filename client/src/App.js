@@ -3,7 +3,8 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import {BrowserRouter as Router, Switch, Route} from "react-router-dom";
 import Header from "./components/header_footer/Header";
 import Footer from "./components/header_footer/Footer";
-import Players from "./components/Players";
+import Players from "./components/players/Players";
+import AddPlayers from "./components/players/AddPlayers";
 import Provider from "./context";
 import './App.css';
 
@@ -13,10 +14,14 @@ class App extends Component {
       <Provider>
           <Router>
             <React.Fragment>
-              <Header />
-              <h1 className="text-center">Hello</h1>
+              <Header/>              
               <div className="container">
-                <Players />
+
+                <Switch>
+                  <Route exact path="/" component={Players}/>
+                  <Route exact path="/players/add" component={AddPlayers} />
+                </Switch>
+
               </div> 
               <Footer />
             </React.Fragment>

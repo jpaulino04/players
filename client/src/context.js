@@ -38,6 +38,24 @@ export default class Provider extends Component {
                     age  : 31,
                     RBIs : 54,
                     HRuns : 20
+                },
+                {
+                    id: 4,
+                    name : "Ricky",
+                    last : "Mosquea",
+                    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/d00maz/128.jpg",
+                    age  : 19,
+                    RBIs : 28,
+                    HRuns : 14
+                },
+                {
+                    id: 5,
+                    name : "Pedro",
+                    last : "Aracena",
+                    avatar: "https://s3.amazonaws.com/uifaces/faces/twitter/theonlyzeke/128.jpg",
+                    age  : 26,
+                    RBIs : 32,
+                    HRuns : 18
                 }
                 
             ]

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import {Consumer} from "../context";
+import {Consumer} from "../../context";
 import Player from "./Player";
 class Players extends Component {
     constructor(props){
@@ -19,8 +19,9 @@ class Players extends Component {
                     
                     const players = value.players;
                     return(
-                        <React.Fragment>
-                            <div className="row text-center my-4 bg-dark p-3">
+                        <React.Fragment>    
+                            <h1 className="text-center">Top Baseball Players</h1>                         
+                            <div className="row justify-content-around my-4 bg-dark text-center p-2"> 
                                 {
                                     players.map(player =>(
                                         <Player key={player.id} player={player}/>

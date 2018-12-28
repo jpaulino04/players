@@ -3,7 +3,7 @@ import React from 'react'
 const Player = (props) => {
     const player = props.player;
     return (
-        <div className="col-md-3 card mx-auto">
+        <div className="col-md-4 card text-center m-1">
             <div className="card-img-top">
                 <img src={`${player.avatar}`} alt=""/>
             </div>
