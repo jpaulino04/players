@@ -10,8 +10,13 @@ function Header() {
     </button>
     <div className="collapse navbar-collapse " id="navbarNavAltMarkup">
       <div className="navbar-nav ml-auto">
-        <Link className="nav-item nav-link ml-auto" to="/">Home <span className="sr-only">(current)</span></Link>   
-        <Link className="nav-item nav-link ml-auto" to="/players/add">Add Player<span className="sr-only">(current)</span></Link>   
+        <Link 
+          className="nav-item nav-link ml-auto" to="/">Home <span className="sr-only">(current)</span></Link>   
+        <Link 
+          className="nav-item nav-link ml-auto" to="/players/add">Add Player<span className="sr-only">(current)</span>
+        </Link>   
+        <Link 
+          className="nav-item nav-link ml-auto" to="/players/search">Search Players<span className="sr-only">(current)</span></Link>  
       </div>
   </div>
 </nav>   

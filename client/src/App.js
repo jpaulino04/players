@@ -5,8 +5,10 @@ import Header from "./components/header_footer/Header";
 import Footer from "./components/header_footer/Footer";
 import Players from "./components/players/Players";
 import AddPlayers from "./components/players/AddPlayers";
+import SearchPlayers from "./components/players/SearchPlayers";
 import Provider from "./context";
 import './App.css';
+
 
 class App extends Component {
   render() {
@@ -20,6 +22,7 @@ class App extends Component {
                 <Switch>
                   <Route exact path="/" component={Players}/>
                   <Route exact path="/players/add" component={AddPlayers} />
+                  <Route exact path="/players/search" component={SearchPlayers} />
                 </Switch>
 
               </div> 
