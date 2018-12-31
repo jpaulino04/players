@@ -1,4 +1,5 @@
-import React, { Component } from 'react'
+import React, { Component } from 'react';
+import {Consumer} from '../../context';
 import axios from "axios";
 
 export default class SearchPlayers extends Component {
@@ -15,7 +16,11 @@ export default class SearchPlayers extends Component {
             })
     }
 
+    setPlayers = ()=>{ 
+        //working on changing the app state
+        var players = this.state.players;
 
+    }
     
   render() {
     return (

@@ -1,23 +1,37 @@
 import React, { Component } from 'react'
 import {Consumer} from "../../context";
+import axios from "axios";
 import Player from "./Player";
 class Players extends Component {
     constructor(props){
         super(props);
-        this.players = []
+        this.state = {
+            players: [], 
+            dispatch: null
+        }
     }
     componentDidMount(){
-        console.log("List of players")
-        console.log(this.players)
+        axios.get('/players/search')
+            .then((res) =>{
+                this.setState({players: res.data})
+
+            })
     }
+    setPlayers = dispatch => {
+        console.log(dispatch)
+    }
+
+
   render() {
       return (
         <Consumer>
             {                
                 value => {  
-                    this.players = value.players;
-                    
+                    this.players = value.players;                    
                     const players = value.players;
+                    const {dispatch} = value;
+                    // this.setPlayers.bind(this,dispatch) //working here
+                    //trying to use dispatch in setPlayes
                     return(
                         <React.Fragment>    
                             <h1 className="text-center">Top Baseball Players</h1>                         
