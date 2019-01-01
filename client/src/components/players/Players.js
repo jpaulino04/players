@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import {Consumer} from "../../context";
-import axios from "axios";
+
 import Player from "./Player";
 class Players extends Component {
     constructor(props){
@@ -11,37 +11,20 @@ class Players extends Component {
         };
         this.dispatch = null;
     }
-    
-    componentDidMount(){
-        axios.get('/players/search')
-            .then((res) =>{
-                this.setState({players: res.data, dispatch: this.dispatch})
-                this.setPlayers(this.dispatch)
-
-            })
-        
-    }
-    setPlayers = dispatch => {
-        console.log(this.state)
-    }
-
-    
   render() {
       return (
         <Consumer>
             {                
-                value => {  
-                    this.players = value.players;                    
-                    const players = value.players;
-                    const {dispatch} = value;  
-                    this.dispatch = dispatch;                  
+                value => { 
+                    const {players} = value;
+                    console.log(players[0])
                     return(
                         <React.Fragment>    
                             <h1 className="text-center">Top Baseball Players</h1>                         
-                            <div className="row justify-content-around my-4 bg-dark text-center p-2"> 
+                            <div className="row justify-content-around my-4  text-center py-4"> 
                                 {
                                     players.map(player =>(
-                                        <Player key={player.id} player={player}/>
+                                        <Player key={player.IdPlayer} player={player}/>
                                     ))
                                 }
                             </div>
