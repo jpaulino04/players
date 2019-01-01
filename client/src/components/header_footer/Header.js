@@ -17,6 +17,8 @@ function Header() {
         </Link>   
         <Link 
           className="nav-item nav-link ml-auto" to="/players/search">Search Players<span className="sr-only">(current)</span></Link>  
+        <Link 
+        className="nav-item nav-link ml-auto" to="/players/ricky">Ricky<span className="sr-only">(current)</span></Link>  
       </div>
   </div>
 </nav>   

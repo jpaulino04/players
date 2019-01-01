@@ -1,7 +1,7 @@
 const express   = require('express'),
         app     = express();
 const mysql     = require('mysql');
-const        db     = require('../config/config');
+const    db     = require('../config/config');
 
 // app.use(express.static(__dirname + '/public'));
 const port = process.env.PORT || 3008;
@@ -13,6 +13,9 @@ const pool = mysql.createPool(db.db);
 app.get('/hello', function(req,res) {
     res.send('hello!')
 })
+app.get('/ricky', function(req, res) {
+    res.json({result:"Hello fron Ricky"})
+})
 
 
 app.get('/players/search', function(req,res) {
@@ -22,6 +25,7 @@ app.get('/players/search', function(req,res) {
         res.send(result)
     })
 })
+
 
 
 

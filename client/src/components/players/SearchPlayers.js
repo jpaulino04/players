@@ -11,6 +11,7 @@ export default class SearchPlayers extends Component {
         e.preventDefault();
         axios.get('/players/search')
             .then(res =>{
+                console.log(res)
                 this.setState({players: res.data})
                 this.setState({showPlayers: !this.state.showPlayers})                
             })
@@ -50,7 +51,10 @@ export default class SearchPlayers extends Component {
             {this.state.showPlayers ? 
                 <div className="text-center mt-3"> 
                     {this.state.players.map(player=>(
-                        <p className="lead" key={player.IdPlayer}>{player.Name} {player.Last_Name}</p>
+                        <div>
+                            <p className="lead" key={player.IdPlayer}> {player.Name} {player.Last_Name} {player.Age} </p>
+                            <img src={player.Avatar} alt=""/>
+                        </div>
                     ))}                    
                 </div> : (
                 

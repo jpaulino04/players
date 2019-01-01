@@ -8,20 +8,24 @@ class Players extends Component {
         this.state = {
             players: [], 
             dispatch: null
-        }
+        };
+        this.dispatch = null;
     }
+    
     componentDidMount(){
         axios.get('/players/search')
             .then((res) =>{
-                this.setState({players: res.data})
+                this.setState({players: res.data, dispatch: this.dispatch})
+                this.setPlayers(this.dispatch)
 
             })
+        
     }
     setPlayers = dispatch => {
-        console.log(dispatch)
+        console.log(this.state)
     }
 
-
+    
   render() {
       return (
         <Consumer>
@@ -29,9 +33,8 @@ class Players extends Component {
                 value => {  
                     this.players = value.players;                    
                     const players = value.players;
-                    const {dispatch} = value;
-                    // this.setPlayers.bind(this,dispatch) //working here
-                    //trying to use dispatch in setPlayes
+                    const {dispatch} = value;  
+                    this.dispatch = dispatch;                  
                     return(
                         <React.Fragment>    
                             <h1 className="text-center">Top Baseball Players</h1>                         
