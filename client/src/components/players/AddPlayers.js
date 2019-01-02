@@ -28,7 +28,7 @@ class AddPlayers extends Component {
         e.preventDefault();
         var newPlayer = this.state;
         newPlayer.IdPlayer = uuid();
-        console.log(newPlayer)
+        console.log("from AddPlayer onSubmit ",newPlayer)
         dispatch({type:'Add_Contact', payload:newPlayer})
         //when making a post with axios, remember to send the data as the second param
         this.props.history.push('/')        

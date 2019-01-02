@@ -29,7 +29,7 @@ export default class Provider extends Component {
 
     async componentDidMount(){
         const res = await axios.get('/players/search'); 
-        console.log(res)      
+        console.log("From context: ", res)      
         this.setState({players: res.data})           
     }
 
