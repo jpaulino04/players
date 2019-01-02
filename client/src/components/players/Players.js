@@ -17,10 +17,9 @@ class Players extends Component {
             {                
                 value => { 
                     const {players} = value;
-                    console.log(players[0])
                     return(
                         <React.Fragment>    
-                            <h1 className="text-center">Top Baseball Players</h1>                         
+                            <h1 className="text-center mt-3">Top Baseball Players</h1>                         
                             <div className="row justify-content-around my-4  text-center py-4"> 
                                 {
                                     players.map(player =>(

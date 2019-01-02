@@ -5,13 +5,11 @@ const Context = React.createContext();
 
 const reducer = (state, action) => {
     switch(action.type){
-        case "Add_Contact":
-            console.log("Hello from Context")
-            break;
-            // return {
-            //     ...state,
-            //     players: [action.payload, ...state.players]
-            // }
+        case "Add_Contact":            
+            return {
+                ...state,
+                players: [action.payload, ...state.players]
+            }
         default:
             return state;
     }
@@ -23,18 +21,16 @@ export default class Provider extends Component {
 
         this.state = {            
             players : [],
-            dispatch : action => {
+            dispatch : action => {                
                 this.setState((state) => reducer(state, action))
             }
         }
     }
 
     async componentDidMount(){
-        const res = await axios.get('/players/search');
-        console.log(res)
-        
-        this.setState({players: res.data}) 
-          
+        const res = await axios.get('/players/search'); 
+        console.log(res)      
+        this.setState({players: res.data})           
     }
 
     render() {

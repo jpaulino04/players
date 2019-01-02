@@ -9,7 +9,7 @@ const Player = (props) => {
                 <img src={`${player.Avatar}`} alt=""/>
             </div>
             <p className="lead">
-                {player.Name}
+                {player.Name} {player.Last_Name} 
             </p>
             <div className="card-body py-0 my-0">
                 <ul className="list-group border border-0 py-0 my-0">

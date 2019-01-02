@@ -51,8 +51,8 @@ export default class SearchPlayers extends Component {
             {this.state.showPlayers ? 
                 <div className="text-center mt-3"> 
                     {this.state.players.map(player=>(
-                        <div>
-                            <p className="lead" key={player.IdPlayer}> {player.Name} {player.Last_Name} {player.Age} </p>
+                        <div key={player.IdPlayer}>
+                            <p className="lead" > {player.Name} {player.Last_Name} {player.Age} </p>
                             <img src={player.Avatar} alt=""/>
                         </div>
                     ))}                    
